@@ -267,7 +267,7 @@ class boss_drakkari_elemental : public CreatureScript
                 events.Reset();
                 events.ScheduleEvent(EVENT_SURGE, urand(5000, 15000));
 
-                me->AddAura(SPELL_MOJO_VOLLEY, me);
+                // me->AddAura(SPELL_MOJO_VOLLEY, me);
             }
 
             void JustDied(Unit* killer)
@@ -284,6 +284,8 @@ class boss_drakkari_elemental : public CreatureScript
 
             void UpdateAI(const uint32 diff)
             {
+                me->AddAura(SPELL_MOJO_VOLLEY, me);
+
                 if (!UpdateVictim())
                     return;
 
